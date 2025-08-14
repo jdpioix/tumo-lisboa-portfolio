@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intercâmbio - Diógenes Vieira</title>
+  <title>Diógenes Vieira - Intercâmbio Educacional</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header>
-    <h1>Intercâmbio em Lisboa</h1>
+    <h1>Intercâmbio Educacional <img src="./assets/images/portugal-flag.png" alt="Bandeira de Portugal" class="flag"></h1>
     <nav>
-      <ul>
+      <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+      <ul class="menu">
         <li><a href="#sobre-mim">Sobre Mim</a></li>
-        <li><a href="#seduckathon">2º Seduckathon</a></li>
+        <li><a href="#seduckathon">Seduckathon</a></li>
         <li><a href="#studycraft">StudyCraft</a></li>
-        <li><a href="#oficinas">Oficinas</a></li>
         <li><a href="#experiencia-cultural">Experiência Cultural</a></li>
+        <li><a href="#oficinas">Oficinas Trabalhadas</a></li>
       </ul>
     </nav>
   </header>
@@ -38,18 +39,9 @@
     <!-- Seduckathon -->
     <section id="seduckathon">
       <h2>2º Seduckathon</h2>
-            <p>O SEDUCKATHON é uma competição de programação envolvendo estudantes 
-               da 2ª e 3ª séries do Ensino Médio da Seduc, regularmente matriculados nos 
-               cursos de Desenvolvimento de Sistemas e Programação de Jogos.  
-               O objetivo é selecionar alunos e professores para intercâmbio internacional.</p>
-
-            <p>Em 2025, o evento contou com quase <strong>9 mil estudantes inscritos</strong>, 
-               número seis vezes maior que em 2024.  
-               Foram 125 equipes na fase de projetos, 35 na fase de maratona e, no final, 
-               <strong>100 alunos de TI</strong> e <strong>10 de Empreendedorismo</strong> ganharam 
-               o intercâmbio internacional.</p>
-
-            <p>Nosso time ficou em <strong>7º lugar</strong>, uma conquista que nos enche de orgulho!</p>
+      <p>O SEDUCKATHON é uma competição de programação envolvendo estudantes da 2ª e 3ª séries do Ensino Médio da Seduc, com objetivo de selecionar alunos e professores para intercâmbio internacional.</p>
+      <p>Em 2025, quase <strong>9 mil estudantes inscritos</strong>. Foram 125 equipes na fase de projetos, 35 na fase de maratona e, no final, <strong>100 alunos de TI</strong> e <strong>10 de Empreendedorismo</strong> ganharam o intercâmbio internacional.</p>
+      <p>Nosso time ficou em <strong>7º lugar</strong>!</p>
       <div class="galeria">
         <img src="./img/seduckathon1.jpg" alt="Equipe no Seduckathon">
         <img src="./img/seduckathon2.jpg" alt="Apresentação do projeto">
@@ -60,9 +52,7 @@
     <!-- StudyCraft -->
     <section id="studycraft">
       <h2>StudyCraft</h2>
-      <p>
-        O StudyCraft é uma plataforma gamificada de ensino desenvolvida para aumentar o engajamento e reduzir a evasão escolar. Transformamos o aprendizado em uma experiência divertida e motivadora, com missões, recompensas e rankings.
-      </p>
+      <p>O StudyCraft é uma plataforma gamificada de ensino desenvolvida para aumentar o engajamento e reduzir a evasão escolar. Transformamos o aprendizado em uma experiência divertida e motivadora, com missões, recompensas e rankings.</p>
       <div class="galeria">
         <img src="./img/studycraft1.jpg" alt="Tela inicial do StudyCraft">
         <img src="./img/studycraft2.jpg" alt="Equipe desenvolvendo o projeto">
@@ -70,32 +60,65 @@
       </div>
     </section>
 
-    <!-- Oficinas -->
-    <section id="oficinas">
-      <h2>Oficinas</h2>
-      <ul>
-        <li><a href="./oficina1.html">Oficina 1 - Programação Criativa</a></li>
-        <li><a href="./oficina2.html">Oficina 2 - Design Digital</a></li>
-        <li><a href="./oficina3.html">Oficina 3 - Narrativas Interativas</a></li>
-      </ul>
-    </section>
-
     <!-- Experiência Cultural -->
     <section id="experiencia-cultural">
       <h2>Experiência Cultural</h2>
-      <p>
-        Além das atividades acadêmicas, tivemos a oportunidade de conhecer a rica história e cultura de Lisboa, explorando pontos turísticos, gastronomia e eventos culturais.
-      </p>
+      <p>Além das atividades acadêmicas, tivemos a oportunidade de conhecer a rica história e cultura de Lisboa, explorando pontos turísticos, gastronomia e eventos culturais.</p>
       <div class="galeria">
         <img src="./img/lisboa1.jpg" alt="Vista de Lisboa">
         <img src="./img/lisboa2.jpg" alt="Castelo de São Jorge">
         <img src="./img/lisboa3.jpg" alt="Torre de Belém">
       </div>
     </section>
+
+    <!-- Oficinas -->
+    <section id="oficinas">
+      <h2>Oficinas Trabalhadas</h2>
+      <div class="mosaico">
+        <div class="oficina">
+          <img src="./img/gamificacao.jpg" alt="Gamificação">
+          <p><strong>Gamificação:</strong> Oficina sobre técnicas de gamificação para aprendizado ativo e engajamento.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/design-thinking.jpg" alt="Design Thinking">
+          <p><strong>Design Thinking:</strong> Oficina de resolução criativa de problemas e prototipagem.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/visualizacao-dados.jpg" alt="Visualização de Dados">
+          <p><strong>Visualização de Dados:</strong> Oficina sobre análise e apresentação de dados visualmente.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/webapp.jpg" alt="Web App">
+          <p><strong>Web App:</strong> Desenvolvimento de aplicações web interativas.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/app-vr.jpg" alt="App VR">
+          <p><strong>App VR:</strong> Criação de aplicações em realidade virtual.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/sensores.jpg" alt="Sensores e Atuadores">
+          <p><strong>Sensores e Atuadores:</strong> Exploração de sistemas físicos conectados e interativos.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/impressao3d.jpg" alt="Impressão 3D">
+          <p><strong>Impressão 3D:</strong> Oficina de modelagem e impressão 3D.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/robotica-iot.jpg" alt="Robótica IoT">
+          <p><strong>Robótica IoT:</strong> Desenvolvimento de projetos com sensores, atuadores e IoT.</p>
+        </div>
+        <div class="oficina">
+          <img src="./img/studycraft.jpg" alt="Projeto Transversal StudyCraft">
+          <p><strong>Projeto Transversal:</strong> StudyCraft, plataforma gamificada de ensino.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Diógenes Vieira - Intercâmbio em Lisboa</p>
+    <p>&copy; 2025 Diógenes Vieira - Intercâmbio Educacional</p>
   </footer>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>
