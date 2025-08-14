@@ -1,0 +1,9 @@
+body {
+  background-color: lightgray; /* cor de fundo da página */
+}
+
+h1 {
+  color: blue;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
