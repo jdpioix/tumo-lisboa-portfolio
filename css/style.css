@@ -1,10 +1,11 @@
-/* Reset básico para evitar inconsistências entre navegadores */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #1a1a1a, #3b0a45);
@@ -26,11 +27,41 @@ header h1 {
   text-shadow: 0 0 10px rgba(166, 78, 212, 0.7);
 }
 
+/* Menu */
+nav {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4081;
+}
+
 /* Seções */
 section {
   padding: 2rem;
   max-width: 1000px;
   margin: auto;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 section h2 {
@@ -58,23 +89,18 @@ section img:hover {
   transform: scale(1.03);
 }
 
-/* Menu */
-nav {
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 0.8rem;
-  text-align: center;
+/* Foto de perfil */
+.foto-perfil {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #a64ed4;
+/* Parágrafos */
+p {
+  text-align: justify;
+  line-height: 1.6;
 }
 
 /* Rodapé */
@@ -84,49 +110,52 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   color: #bbb;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Animação suave de entrada */
+/* Animação */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-section, header, nav, footer {
-  animation: fadeIn 0.8s ease-in-out;
+/* Estilo geral da seção */
+#sobre-mim {
+  padding: 20px;
 }
 
-
-nav ul {
-  list-style: none; /* Remove os marcadores */
-  padding: 0;       /* Remove o espaçamento interno */
-  margin: 0;        /* Remove o espaçamento externo */
+#sobre-mim .conteudo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-nav ul li {
-  display: inline-block; /* Coloca os itens lado a lado */
-  margin-right: 20px;    /* Espaçamento entre os itens */
+#sobre-mim .foto-perfil {
+  width: 180px;
+  height: auto;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-nav ul li a {
-  text-decoration: none; /* Remove sublinhado */
-  color: #fff;           /* Cor do texto */
-  font-weight: bold;     /* Negrito */
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #ff4081; /* Cor de destaque ao passar o mouse */
-}
-
-.foto-perfil {
-  width: 150px; /* largura desejada */
-  height: auto; /* mantém proporção */
-  border-radius: 50%; /* opcional: deixa redonda */
-  object-fit: cover; /* mantém centralizada */
-}
-
-p {
+#sobre-mim p {
   text-align: justify;
-  line-height: 1.6; /* Ajuste conforme necessário */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #sobre-mim .conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #sobre-mim .foto-perfil {
+    width: 140px;
+  }
+
+  #sobre-mim p {
+    text-align: justify;
+    max-width: 90%;
+  }
 }
