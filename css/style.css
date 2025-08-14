@@ -1,9 +1,137 @@
+/* -------------------- Estilo Global -------------------- */
 body {
-  background-color: lightgray; /* cor de fundo da página */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* cor de fundo suave */
+  color: #333;
 }
 
-h1 {
-  color: blue;
-  font-family: Arial, sans-serif;
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+/* -------------------- Cabeçalho e Menu -------------------- */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0 1em;
+}
+
+.menu li a {
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+}
+
+/* -------------------- Seção de Apresentação -------------------- */
+.apresentacao {
   text-align: center;
+  padding: 3em 1em;
+  background: linear-gradient(120deg, #a6c0fe, #f68084);
+  color: white;
+}
+
+.apresentacao p {
+  max-width: 700px;
+  margin: 1em auto;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+/* -------------------- Seção de Oficinas -------------------- */
+.oficinas {
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5em;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 0.5em;
+  color: #0077cc;
+}
+
+.card p {
+  font-size: 0.95em;
+  margin-bottom: 1em;
+}
+
+.card a {
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #005fa3;
+}
+
+/* -------------------- Responsividade -------------------- */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 0.5em 0;
+  }
 }
