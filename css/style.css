@@ -3,27 +3,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4; /* cor de fundo suave */
-  color: #333;
+  background-color: #1a1a1a; /* fundo preto */
+  color: #e0e0e0; /* texto claro */
 }
 
 h1, h2, h3 {
   margin: 0.5em 0;
+  color: #b84ff4; /* roxo destacado */
 }
 
 a {
   text-decoration: none;
-  color: #0077cc;
+  color: #b84ff4;
 }
 
 a:hover {
-  color: #005fa3;
+  color: #9a33d1;
 }
 
 /* -------------------- Cabeçalho e Menu -------------------- */
 header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #111;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -49,8 +50,8 @@ header {
 }
 
 .menu li a:hover {
-  background-color: #0077cc;
-  color: white;
+  background-color: #b84ff4;
+  color: black;
   border-radius: 5px;
 }
 
@@ -58,7 +59,7 @@ header {
 .apresentacao {
   text-align: center;
   padding: 3em 1em;
-  background: linear-gradient(120deg, #a6c0fe, #f68084);
+  background: linear-gradient(120deg, #9a33d1, #b84ff4);
   color: white;
 }
 
@@ -84,22 +85,23 @@ header {
 }
 
 .card {
-  background-color: white;
+  background-color: #1a1a1a;
+  border: 2px solid #b84ff4;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 1.5em;
   width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(184, 79, 244, 0.4);
+  border-color: #9a33d1;
 }
 
 .card h3 {
   margin-bottom: 0.5em;
-  color: #0077cc;
+  color: #b84ff4;
 }
 
 .card p {
@@ -109,15 +111,15 @@ header {
 
 .card a {
   display: inline-block;
-  background-color: #0077cc;
-  color: white;
+  background-color: #b84ff4;
+  color: black;
   padding: 0.5em 1em;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 .card a:hover {
-  background-color: #005fa3;
+  background-color: #9a33d1;
 }
 
 /* -------------------- Responsividade -------------------- */
