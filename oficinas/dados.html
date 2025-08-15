@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Dados</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        canvas {
+            margin-top: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        h2 {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .btn-voltar {
+            display: block;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-voltar:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Visualização de Dados</h1>
+    </header>
+
+    <main>
+        <p>
+            A biblioteca <strong>Chart.js</strong> é uma das opções mais simples e poderosas para criar gráficos interativos no navegador. Ela é fácil de configurar, leve e compatível com diversos tipos de visualização, como barras, linhas, pizzas e muito mais.
+            Além disso, oferece recursos de personalização, animações suaves e boa performance, mesmo em dispositivos móveis. Para projetos educacionais, apresentações e até sistemas profissionais, o Chart.js é uma escolha prática que entrega resultados visuais de alta qualidade sem exigir configurações complexas.
+        </p>
+
+        <h2>Nível de Satisfação dos Usuários</h2>
+        <canvas id="graficoBarras"></canvas>
+
+        <h2>Tipos de Manifestações Recebidas</h2>
+        <canvas id="graficoPizza"></canvas>
+
+        <button class="btn-voltar" onclick="window.location.href='../index.html'">⬅ Voltar para Página Inicial</button>
+    </main>
+
+    <script>
+        // Gráfico de Barras
+        const ctxBarras = document.getElementById('graficoBarras').getContext('2d');
+        new Chart(ctxBarras, {
+            type: 'bar',
+            data: {
+                labels: ['Muito Satisfeito', 'Satisfeito', 'Neutro', 'Insatisfeito', 'Muito Insatisfeito'],
+                datasets: [{
+                    label: 'Número de Respostas',
+                    data: [45, 30, 15, 7, 3],
+                    backgroundColor: ['#4caf50', '#8bc34a', '#ffeb3b', '#ff9800', '#f44336']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // Gráfico de Pizza
+        const ctxPizza = document.getElementById('graficoPizza').getContext('2d');
+        new Chart(ctxPizza, {
+            type: 'pie',
+            data: {
+                labels: ['Elogio', 'Sugestão', 'Reclamação', 'Solicitação', 'Outro'],
+                datasets: [{
+                    data: [20, 15, 10, 5, 3],
+                    backgroundColor: ['#2196f3', '#4caf50', '#f44336', '#ff9800', '#9c27b0']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>
