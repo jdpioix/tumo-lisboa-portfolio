@@ -38,7 +38,7 @@ section img:hover{transform:scale(1.03);}
 footer{background-color:rgba(0,0,0,0.85);text-align:center;padding:1rem;font-size:0.9rem;color:#bbb;animation:fadeIn 0.8s ease-in-out;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 #sobre-mim .conteudo{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;}
-#sobre-mim .foto-perfil{width:180px;flex-shrink:0;}
+#sobre-mim .foto-perfil{width:220px;flex-shrink:0;}
 
 /* Mosaico oficinas */
 .mosaico{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1rem;}
@@ -64,7 +64,11 @@ footer{background-color:rgba(0,0,0,0.85);text-align:center;padding:1rem;font-siz
     box-shadow: 0 0 15px rgba(212, 154, 247, 0.8);
 }
 
-
+.galeria img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Largura:Altura */
+    object-fit: cover;
+}
 
 /* Responsividade */
 @media(max-width:768px){
