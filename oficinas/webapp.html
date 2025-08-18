@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .chart-container {
+        width: 60%; /* aumentamos em 20% (antes estava 50%) */
+        margin: 20px auto; /* centraliza horizontalmente */
+        background: #fff; /* fundo branco */
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      #output {
+        text-align: center; /* centraliza a lista */
+      }
+      #output ul {
+        list-style: none;
+        padding: 0;
+      }
+      #output li {
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web App</h1>
+    </header>
+    <div class="container">
+      <h1>🌤️ Previsão do Tempo</h1>
+      <p>
+        Nesta oficina, utilizamos a <strong>API Open-Meteo</strong> para buscar
+        dados reais de previsão do tempo. Esse é um exemplo de como
+        <em>Web Apps</em> podem trazer informações externas e integrá-las ao
+        nosso sistema.
+      </p>
+
+      <div class="card">
+        <h2>📍 Pio IX - PI (Brasil)</h2>
+        <div id="output" class="lista-tempo">Carregando previsão...</div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="weatherChart"></canvas>
+      </div>
+
+      <button
+        class="btn-voltar"
+        onclick="window.location.href='../index.html'"
+      >
+        Página Inicial
+      </button>
+    </div>
+
+    <script>
+      fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=-6.83&longitude=-40.61&daily=temperature_2m_max,temperature_2m_min&timezone=auto"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let dias = data.daily;
+          let outputDiv = document.getElementById("output");
+
+          // Centralizar e exibir lista
+          let html = "<ul>";
+          for (let i = 0; i < dias.time.length; i++) {
+            html += `<li><strong>${dias.time[i]}</strong> → 🌡️ Máx: <span class="max">${dias.temperature_2m_max[i]}°C</span> | ❄️ Mín: <span class="min">${dias.temperature_2m_min[i]}°C</span></li>`;
+          }
+          html += "</ul>";
+          outputDiv.innerHTML = html;
+
+          // Criar gráfico de barras duplas
+          const ctx = document.getElementById("weatherChart").getContext("2d");
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: dias.time,
+              datasets: [
+                {
+                  label: "Temperatura Máxima (°C)",
+                  data: dias.temperature_2m_max,
+                  backgroundColor: "rgba(255, 99, 132, 0.7)",
+                },
+                {
+                  label: "Temperatura Mínima (°C)",
+                  data: dias.temperature_2m_min,
+                  backgroundColor: "rgba(54, 162, 235, 0.7)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: "📊 Variação de Temperatura - Pio IX (PI)",
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  min: 0,
+                  max: 40, // pode ajustar conforme desejar
+                },
+              },
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar dados:", error);
+          document.getElementById("output").innerHTML =
+            "<p class='erro'>⚠ Não foi possível carregar os dados.</p>";
+        });
+    </script>
+  </body>
+</html>
