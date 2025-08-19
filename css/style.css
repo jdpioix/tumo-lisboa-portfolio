@@ -42,7 +42,15 @@ footer{background-color:rgba(0,0,0,0.85);text-align:center;padding:1rem;font-siz
 
 /* Mosaico oficinas */
 .mosaico{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:1rem;}
-.oficina img{width:100%;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.5);}
+.oficina img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border: 3px solid #a64ed4; /* borda roxa */
+}
+
 .oficina p{margin-top:0.5rem;text-align:center;}
 
 .btn-voltar {
